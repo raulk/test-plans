@@ -11,6 +11,7 @@ import io.libp2p.core.pubsub.PubsubPublisherApi
 import io.libp2p.core.pubsub.Subscriber
 import io.libp2p.core.pubsub.Topic
 import io.libp2p.crypto.keys.Ed25519PrivateKey
+import io.libp2p.protocol.Identify
 import io.libp2p.pubsub.gossip.Gossip
 import io.libp2p.pubsub.gossip.GossipParams
 import io.libp2p.pubsub.gossip.builders.GossipParamsBuilder
@@ -170,12 +171,13 @@ fun initGossipSub(gsParams: GossipSubParams) {
             add(::NoiseXXSecureChannel)
         }
         muxers {
-            +StreamMuxerProtocol.Mplex
+            +StreamMuxerProtocol.getYamux()
         }
         network {
             listen("/ip4/0.0.0.0/tcp/9000")
         }
         protocols {
+            +Identify()
             +gossip
         }
     }
