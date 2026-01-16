@@ -1,0 +1,28 @@
+{
+  "name": "gossipsub-interop-js",
+  "version": "1.0.0",
+  "description": "JS-libp2p gossipsub interop test binary",
+  "type": "module",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/main.js"
+  },
+  "dependencies": {
+    "@chainsafe/libp2p-gossipsub": "file:../../../../js-libp2p-gossipsub",
+    "@chainsafe/libp2p-noise": "^16.1.0",
+    "@chainsafe/libp2p-yamux": "^7.0.1",
+    "@libp2p/crypto": "^5.0.0",
+    "@libp2p/identify": "^3.0.0",
+    "@libp2p/interface": "^2.7.0",
+    "@libp2p/peer-id": "^5.0.0",
+    "@libp2p/ping": "^3.0.9",
+    "@libp2p/tcp": "^10.0.0",
+    "libp2p": "^2.5.0",
+    "uint8arrays": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.0.0"
+  }
+}
